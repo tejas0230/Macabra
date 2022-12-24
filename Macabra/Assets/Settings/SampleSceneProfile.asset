@@ -106,13 +106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   type:
     m_OverrideState: 1
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.6
+    m_Value: 0.283
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -167,22 +167,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.14
+    m_Value: 0.48
   contrast:
     m_OverrideState: 1
-    m_Value: 18
+    m_Value: 18.13
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.9631081, b: 0.94716984, a: 1}
   hueShift:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -16
   saturation:
     m_OverrideState: 0
-    m_Value: 11
+    m_Value: -6
 --- !u!114 &5012026892984778016
 MonoBehaviour:
   m_ObjectHideFlags: 3
