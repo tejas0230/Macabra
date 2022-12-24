@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float baseSpeed = 0.5f;
     [SerializeField] private AudioSource footStepAudioSource = default;
     [SerializeField] private AudioClip[] woodClips = default;
+    [SerializeField] private AudioClip[] grassClips = default;
     [SerializeField] private LayerMask groundMask;
     private float footStepTimer = 0;
     private float GetCurrentOffeset => baseSpeed;
@@ -99,6 +100,10 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("Wood");
                         footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);          
                     break;
+
+                    case "Grass":
+                        footStepAudioSource.PlayOneShot(grassClips[UnityEngine.Random.Range(0, grassClips.Length - 1)]);
+                        break;
 
                     default:
                         footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
