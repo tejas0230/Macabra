@@ -98,14 +98,20 @@ public class PlayerController : MonoBehaviour
                 {
                     case "Wood":
                         Debug.Log("Wood");
+                        if (woodClips.Length == 0)
+                            return;
                         footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);          
                     break;
 
                     case "Grass":
+                        if (grassClips.Length == 0)
+                            return;
                         footStepAudioSource.PlayOneShot(grassClips[UnityEngine.Random.Range(0, grassClips.Length - 1)]);
                         break;
 
                     default:
+                        if (woodClips.Length == 0)
+                            return;
                         footStepAudioSource.PlayOneShot(woodClips[UnityEngine.Random.Range(0, woodClips.Length - 1)]);
                         break;
                 }
