@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
-    public bool CanMove { get; private set; } = true;
-    public bool CanRotateCam { get;set; } = true;
+    
+    public bool CanMove { get;set; } = true;
+    public bool CanRotateCam { get; set; } = true;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
     [Header("Functional Options")]
     [SerializeField] private bool canCrouch = true;
     [SerializeField] private bool useFootSteps = true;
-
-
+   
     [Header("Controls")]
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
 
