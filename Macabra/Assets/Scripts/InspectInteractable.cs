@@ -19,6 +19,7 @@ public class InspectInteractable : MonoBehaviour
 
     bool isInspecting = false;
     public float Speed = 10f;
+    Collider obj;
     private void Start()
     {
         
@@ -35,11 +36,13 @@ public class InspectInteractable : MonoBehaviour
                 StopAllCoroutines();
                 currentObject = info.collider.gameObject;
                 rb = currentObject.GetComponent<Rigidbody>();
+                obj = currentObject.GetComponent<Collider>();
                 Initial_position = info.collider.transform.position;
                 Rot = Quaternion.Euler(info.collider.transform.localEulerAngles);
                 if(rb!=null)
                 {
                     rb.isKinematic = true;
+                    obj.enabled = false;
                 }
                 
                 control.CanRotateCam = false;
@@ -56,7 +59,7 @@ public class InspectInteractable : MonoBehaviour
                 control.CanRotateCam = true;
                 if(rb!=null)
                 {
-                    StartCoroutine(TogglePhysics(rb, true, 5f));
+                    StartCoroutine(TogglePhysics(rb, true, 2f));
                 }
             }
         }
@@ -82,6 +85,8 @@ public class InspectInteractable : MonoBehaviour
     IEnumerator TogglePhysics(Rigidbody rb,bool value,float TimeWait)
     {
         yield return new WaitForSeconds(TimeWait);
+        obj.enabled = true;
         rb.isKinematic = !value;
+        
     }
 }

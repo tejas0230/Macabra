@@ -18,7 +18,7 @@ public class LightInteraction : MonoBehaviour
     void Start()
     {
         actualLight = gameObject.GetComponent<Light>();
-        SwitchLight();
+        //SwitchLight();
     }
 
     // Update is called once per frame

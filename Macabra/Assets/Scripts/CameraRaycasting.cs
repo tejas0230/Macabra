@@ -84,7 +84,7 @@ public class CameraRaycasting : MonoBehaviour
         ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if (Physics.Raycast(ray,out whatIHit,range))
         {
-            Debug.DrawLine(transform.position, whatIHit.point, Color.red);
+            Debug.DrawLine(mainCam.transform.position, whatIHit.point, Color.red);
             IInteractable interactable = whatIHit.collider.GetComponent<IInteractable>();
             if(interactable!=null)
             {

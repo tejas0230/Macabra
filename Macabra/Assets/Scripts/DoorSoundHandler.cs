@@ -17,6 +17,7 @@ public class DoorSoundHandler : MonoBehaviour
     private AudioClip doorClose;
     [SerializeField]
     private AudioClip doorLocked;
+    int counter = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class DoorSoundHandler : MonoBehaviour
     {
         if (other.CompareTag("Door"))
         {
+            if(counter==0 || counter ==1)
+                counter++;
+            if (counter == 1)
+                return;
             if (!doorSource.isPlaying)
                 doorSource.PlayOneShot(doorClose);
             print("played");

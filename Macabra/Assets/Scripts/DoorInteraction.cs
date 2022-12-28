@@ -17,6 +17,7 @@ public class DoorInteraction : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private PlayerController control;
+    
     public GameObject Door;
 
     [Header("Functional Parameters")]
@@ -115,6 +116,7 @@ public class DoorInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isEnter = true;
+            
         }  
     }
 
@@ -132,6 +134,7 @@ public class DoorInteraction : MonoBehaviour
             isEnter = false;
             isInteracting = false;
             control.CanRotateCam = true;
+           
         }
     }
 
