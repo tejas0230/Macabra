@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
-    public bool CanMove { get; private set; } = true;
-    public bool CanRotateCam { get;set; } = true;
+    
+    public bool CanMove { get;set; } = true;
+    public bool CanRotateCam { get; set; } = true;
     private bool ShouldCrouch => Input.GetKeyDown(crouchKey) && !duringCrouchingAnimation && characterController.isGrounded;
     [Header("Functional Options")]
     [SerializeField] private bool canCrouch = true;
     [SerializeField] private bool useFootSteps = true;
-
-
+   
     [Header("Controls")]
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
 
@@ -92,8 +93,10 @@ public class PlayerController : MonoBehaviour
         footStepTimer -= Time.deltaTime;
         if(footStepTimer<=0)
         {
-            if(Physics.Raycast(playerCamera.transform.position,Vector3.down,out RaycastHit hit,3))
+            if(Physics.Raycast(playerCamera.transform.position,Vector3.down,out RaycastHit hit,4))
             {
+                
+                Debug.Log(hit.collider.tag);
                 switch(hit.collider.tag)
                 {
                     case "Wood":
@@ -171,13 +174,15 @@ public class PlayerController : MonoBehaviour
 
         while(timeElapsed<timeToCrouch)
         {
-            characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed / timeToCrouch);
             characterController.center = Vector3.Lerp(currentCenter, targetCenter, timeElapsed / timeToCrouch);
+            characterController.height = Mathf.Lerp(currentHeight, targetHeight, timeElapsed / timeToCrouch);
+           
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        characterController.height = targetHeight;
         characterController.center = targetCenter;
+        characterController.height = targetHeight;
+       
 
         isCrouching = !isCrouching;
         duringCrouchingAnimation = false;

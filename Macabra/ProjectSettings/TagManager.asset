@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Grass
+  - Door
+  - InteractItem
+  - Inspectable
   layers:
   - Default
   - TransparentFX
@@ -14,10 +17,10 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Observe_layer
+  - Inspectable
+  - Pickable
+  - Drawer
   - 
   - 
   - 
