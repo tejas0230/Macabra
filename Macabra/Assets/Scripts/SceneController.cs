@@ -1,12 +1,23 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
    
     public Animator fader;
     private int levelToLoad;
-    public GameObject mainMenu;
+    public static SceneController instance;
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
 
@@ -20,9 +31,6 @@ public class SceneManager : MonoBehaviour
     public void onFadeComplete()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelToLoad);
-        if(levelToLoad!=0)
-        {
-            mainMenu.SetActive(false);
-        }
+        
     }
 }

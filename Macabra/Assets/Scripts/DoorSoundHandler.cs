@@ -8,7 +8,7 @@ public class DoorSoundHandler : MonoBehaviour
     [SerializeField]
     private AudioSource doorSource;
     [SerializeField]
-    private DoorInteraction doorInteraction;
+    private DoorProperties doorProperties;
 
     [Header("Audio Variables")]
     [SerializeField]
@@ -21,13 +21,13 @@ public class DoorSoundHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(doorInteraction.isInteracting && doorInteraction.isLocked)
+        if (doorProperties.isInteracting && doorProperties.isLocked)
         {
             if (!doorSource.isPlaying)
                 doorSource.PlayOneShot(doorLocked);
@@ -38,7 +38,7 @@ public class DoorSoundHandler : MonoBehaviour
     {
         if (other.CompareTag("Door"))
         {
-            if(counter==0 || counter ==1)
+            if (counter == 0 || counter == 1)
                 counter++;
             if (counter == 1)
                 return;
@@ -57,3 +57,4 @@ public class DoorSoundHandler : MonoBehaviour
         }
     }
 }
+

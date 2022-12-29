@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightInteraction : MonoBehaviour
+public class LightBulb: MonoBehaviour
 {
     [Header("References")]
     [SerializeField]

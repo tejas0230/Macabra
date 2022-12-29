@@ -1,146 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class DoorInteraction : MonoBehaviour
 {
+    public FPSController controls;
+    public LayerMask doorLayer;
+    public Camera playerCam;
+    Ray ray;
+    bool isDoorHeld;
+    GameObject door= null;
+    DoorProperties doorProperties = null;
 
-    [Header("Functional Options")]
-    public bool isLocked = false;
-    [SerializeField]
-    bool closeDoor = false;
-    public bool isInteracting = false;
-    [SerializeField]
-    bool isEnter = false;
-
-    [Header("References")]
-    [SerializeField]
-    private PlayerController control;
-    
-    public GameObject Door;
-
-    [Header("Functional Parameters")]
-    [SerializeField]
-    float speed = 10f;
-    
-    [Header("Standard Variables")]
-    Vector3 direction;
-    JointLimits limits;
-    HingeJoint doorJoint;
-
-    private void Awake()
-    {
-        doorJoint = Door.GetComponent<HingeJoint>();
-        limits = doorJoint.limits;
-        control = FindObjectOfType<PlayerController>();
-    }
+    float rotX;
+    bool doorFound = false;
     private void Update()
     {
-        if (isEnter && Input.GetMouseButton(0))
-        {
-            isInteracting = true;
-        }
+        if (!isDoorHeld)
+            CastRayAlways();
 
-        if (isEnter && Input.GetMouseButtonUp(0))
+        if (Input.GetButton("Fire1") && door != null)
         {
-            isInteracting = false;
-            control.CanRotateCam = true;
-            Door.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        }
-        if (isLocked)
-        {
-            limits.min = 0;
-            doorJoint.limits = limits;
+            isDoorHeld = true;
+            
+            controls.CanRotateCam = false;
+            
         }
         else
         {
-            limits.min = -90;
-            doorJoint.limits = limits;
+            isDoorHeld = false;
+                
+            controls.CanRotateCam = true;
+            
         }
 
+        if (isDoorHeld)
+        {
+            if (Vector3.Dot(door.transform.parent.gameObject.transform.forward, door.transform.parent.gameObject.transform.position - transform.position) > 0)
+            {
+                print("in Front");
+               /* if(doorProperties.isReversed)
+                    rotX -= Input.GetAxis("Mouse X");
+                else*/
+                    rotX += Input.GetAxis("Mouse X");
+            }
+            else if (Vector3.Dot(door.transform.parent.gameObject.transform.forward, door.transform.parent.gameObject.transform.position - transform.position) < 0)
+            {
+                print("in back");
+               /* if (doorProperties.isReversed)
+                    rotX += Input.GetAxis("Mouse X");
+                else*/
+                    rotX -= Input.GetAxis("Mouse X");
+            } 
+            rotX = Mathf.Clamp(rotX, doorProperties.minLimit, doorProperties.maxLimit);
+            //print(rotX);
+            door.transform.localRotation = Quaternion.Slerp(door.transform.localRotation, Quaternion.Euler(0, rotX, 0), 10 * Time.deltaTime);
+        }
     }
-    private void FixedUpdate()
+
+    void CastRayAlways()
     {
-        if (closeDoor)
+        ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        if (Physics.Raycast(ray, out RaycastHit hit, 2, doorLayer))
         {
-            CloseDoor();
-            StartCoroutine(ResetCloseDoor());
-        }
-        if(isInteracting)
-        {
-            if (isLocked)
-            {
-                return;
-            }
-            else
-            {
-                float input = Input.GetAxis("Mouse X");
-                Mathf.Clamp(input, -1, 1);
-                control.CanRotateCam = false;
-                if (Input.GetAxis("Mouse X") > 0)
-                {
-                    Door.GetComponent<Rigidbody>().AddTorque(new Vector3(0, Mathf.Sign(Vector3.Dot(transform.forward, direction)) * 10, 0), ForceMode.Impulse);
-                }
-
-                else if (Input.GetAxis("Mouse X") < 0)
-                {
-                    Door.GetComponent<Rigidbody>().AddTorque(new Vector3(0, -Mathf.Sign(Vector3.Dot(transform.forward, direction)) * 10, 0), ForceMode.Impulse);
-                }
-            }
-        }
-       
-            
-       
-        /*if (isInteracting)
-        {
-            
-
+            door = hit.collider.gameObject;
+            doorProperties = door.GetComponent<DoorProperties>();
+            doorProperties.isInteracting = true;
+            doorFound = true;
         }
         else
         {
-            control.CanRotateCam = true;
-            Door.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        }*/
-    }
-
-
-
-
-    public void CloseDoor()
-    {
-        Door.GetComponent<Rigidbody>().AddTorque(new Vector3(0, 100, 0), ForceMode.Impulse);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isEnter = true;
+            if(doorFound)
+            {
+                if(doorProperties!=null)
+                {
+                    doorProperties.isInteracting = false;
+                }
+                
+                doorProperties = null;
+                door = null;
+            }
             
-        }  
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            direction = transform.position - other.transform.position;
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isEnter = false;
-            isInteracting = false;
-            control.CanRotateCam = true;
-           
-        }
-    }
-
-    IEnumerator ResetCloseDoor()
-    {
-        yield return new WaitForSeconds(0.5f);
-        closeDoor = false;
     }
 }
