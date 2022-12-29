@@ -130,11 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7133710002792713848, guid: 80ab82cad31279a419ec30cd5a3dd8fb,
-        type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 7133710002792713849, guid: 80ab82cad31279a419ec30cd5a3dd8fb,
         type: 3}
       propertyPath: m_Name

@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canCrouch: 1
+  useFootSteps: 1
   crouchKey: 306
   walkSpeed: 3
   gravity: 30
@@ -78,6 +79,13 @@ MonoBehaviour:
   timeToCrouch: 0.25
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0, z: 0}
+  baseSpeed: 0.5
+  footStepAudioSource: {fileID: 0}
+  woodClips: []
+  grassClips: []
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &7133710003251221156
 GameObject:
   m_ObjectHideFlags: 0
