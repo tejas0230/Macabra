@@ -29,27 +29,35 @@ public class DoorInteraction : MonoBehaviour
         else
         {
             isDoorHeld = false;
+            if (doorProperties != null)
+            {
                 
+                doorProperties.isDoorHeld = false;
+            }
             controls.CanRotateCam = true;
             
         }
 
         if (isDoorHeld)
         {
+            doorProperties.isDoorHeld = true;
+            if (doorProperties.isLocked)
+                return;
+            
             if (Vector3.Dot(door.transform.parent.gameObject.transform.forward, door.transform.parent.gameObject.transform.position - transform.position) > 0)
             {
                 print("in Front");
-               /* if(doorProperties.isReversed)
+                if (doorProperties.isReversed)
                     rotX -= Input.GetAxis("Mouse X");
-                else*/
+                else
                     rotX += Input.GetAxis("Mouse X");
             }
             else if (Vector3.Dot(door.transform.parent.gameObject.transform.forward, door.transform.parent.gameObject.transform.position - transform.position) < 0)
             {
                 print("in back");
-               /* if (doorProperties.isReversed)
+                if (doorProperties.isReversed)
                     rotX += Input.GetAxis("Mouse X");
-                else*/
+                else
                     rotX -= Input.GetAxis("Mouse X");
             } 
             rotX = Mathf.Clamp(rotX, doorProperties.minLimit, doorProperties.maxLimit);
@@ -75,6 +83,7 @@ public class DoorInteraction : MonoBehaviour
                 if(doorProperties!=null)
                 {
                     doorProperties.isInteracting = false;
+                    doorProperties.isDoorHeld = false;
                 }
                 
                 doorProperties = null;

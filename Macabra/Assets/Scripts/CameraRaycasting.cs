@@ -21,7 +21,7 @@ public class CameraRaycasting : MonoBehaviour
     public Transform inspectZone;
 
     public PlayerController controls;
-    bool isInspecting = false ;
+    
     private void Awake()
     {
         mainCam = Camera.main;

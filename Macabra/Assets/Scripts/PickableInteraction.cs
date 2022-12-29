@@ -15,8 +15,7 @@ public class PickableInteraction : MonoBehaviour
     private bool isInspecting = false;
     Ray ray;
 
-    private float inspectionTime = 1f;
-    private float currentPickupTimerElapsed = 0;
+   
     void Start()
     {
         isObjectPicked = false;

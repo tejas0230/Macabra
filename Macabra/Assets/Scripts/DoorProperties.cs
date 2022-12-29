@@ -12,6 +12,7 @@ public class DoorProperties : MonoBehaviour
     public bool closeDoor;
     public bool isInteracting;
     public bool isReversed;
+    public bool isDoorHeld;
     void Start()
     {
         
