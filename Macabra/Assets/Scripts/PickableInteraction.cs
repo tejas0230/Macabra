@@ -14,7 +14,7 @@ public class PickableInteraction : MonoBehaviour
     private bool tryPickupObject = false;
     private bool isInspecting = false;
     Ray ray;
-
+    public GameObject pickablePanelUI;
    
     void Start()
     {
@@ -68,10 +68,12 @@ public class PickableInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 2, pickableLayer))
         {
             currentPickable = hit.collider.gameObject;
+            pickablePanelUI.SetActive(true);
          }
         else
         {
             currentPickable = null;
+            pickablePanelUI.SetActive(false);
         }
     }
     private void FixedUpdate()
@@ -118,7 +120,7 @@ public class PickableInteraction : MonoBehaviour
     private void holdObject()
     {
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        Vector3 nextPos = playerCam.transform.position + ray.direction * 2;
+        Vector3 nextPos = playerCam.transform.position + ray.direction * 0.5f;
         Vector3 currPos = currentPickable.transform.position;
         currentPickable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 10;
     }

@@ -1810,6 +1810,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2112111246, guid: 82c67869ffec2e24b8e482fd481ab4b8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2944475781658448436, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
       propertyPath: m_Height
@@ -1835,6 +1839,11 @@ PrefabInstance:
       propertyPath: crouchSpeed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2944475781658448437, guid: 82c67869ffec2e24b8e482fd481ab4b8,
+        type: 3}
+      propertyPath: canUseFootsteps
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2944475781658448438, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
       propertyPath: m_Name
@@ -1850,6 +1859,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2944475781658448458, guid: 82c67869ffec2e24b8e482fd481ab4b8,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2944475781658448459, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
       propertyPath: m_RootOrder
@@ -1863,7 +1877,7 @@ PrefabInstance:
     - target: {fileID: 2944475781658448459, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.266
+      value: 2.19
       objectReference: {fileID: 0}
     - target: {fileID: 2944475781658448459, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
@@ -8391,7 +8405,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Music
     clip: {fileID: 8300000, guid: 2ee6fef03a37a254c8dd453427081cac, type: 3}
-    volume: 0.116
+    volume: 0.026
     pitch: 1.18
     loop: 1
     source: {fileID: 0}

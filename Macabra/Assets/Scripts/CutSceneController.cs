@@ -11,8 +11,10 @@ public class CutSceneController : MonoBehaviour
     public Camera Cam3;
     public PlayableDirector intro;
     // Start is called before the first frame update
-    float timeToSkip = 3f;
+    float timeToSkip = 0.5f;
     float timeElapsed = 0;
+
+    bool didSkip = false;
     void Start()
     {
         
@@ -21,13 +23,16 @@ public class CutSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetKey(KeyCode.Space))
+        
+       if(Input.GetKey(KeyCode.Space)&&!didSkip)
         {
             timeElapsed += Time.deltaTime;
             print(timeElapsed);
-            if(timeElapsed==timeToSkip)
+            if(timeElapsed>=timeToSkip)
             {
+                print("timeElapsed==timeToSkip");
                 skipCutscene();
+                didSkip = true;
                 timeElapsed = 0;
             }
         }
@@ -45,8 +50,9 @@ public class CutSceneController : MonoBehaviour
         Cam3.gameObject.SetActive(false);
     }
 
-    void skipCutscene()
+    public void skipCutscene()
     {
-        intro.time = 20f;
+        print("SkipCalled");
+        intro.time = 19f;
     }
 }

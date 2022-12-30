@@ -10,6 +10,8 @@ public class LightInteraction : MonoBehaviour
     GameObject lightButton = null;
     LightSwitch lightSwitch = null;
 
+    public GameObject crosshair;
+    public GameObject lightBulbUI;
     private void Update()
     {
         CastRayAlways();
@@ -27,11 +29,15 @@ public class LightInteraction : MonoBehaviour
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hit, 2, lightLayer))
         {
+            crosshair.SetActive(false);
+            lightBulbUI.SetActive(true);
             lightButton = hit.collider.gameObject;
             lightSwitch = lightButton.GetComponent<LightSwitch>();
         }
         else
         {
+            lightBulbUI.SetActive(false);
+            crosshair.SetActive(true);
             lightButton = null;
             lightSwitch = null;
 

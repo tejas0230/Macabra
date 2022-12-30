@@ -21,6 +21,7 @@ public class InspectableInteraction : MonoBehaviour
     Collider obj;
     public Camera playerCam;
     Ray ray;
+    public GameObject inspectablePanelUI;
     private void Start()
     {
 
@@ -32,6 +33,7 @@ public class InspectableInteraction : MonoBehaviour
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out info, 2f, inspectableLayer) || currentObject != null)
         {
+            inspectablePanelUI.SetActive(true);
             Debug.DrawLine(ray.origin, info.point, Color.green);
             if (Input.GetMouseButtonDown(0) && !isInspecting)
             {
@@ -64,7 +66,7 @@ public class InspectableInteraction : MonoBehaviour
                 control.CanRotateCam = true;
                 if (rb != null)
                 {
-                    StartCoroutine(TogglePhysics(rb, true, 2f,obj));
+                    StartCoroutine(TogglePhysics(rb, true, 0.5f,obj));
                 }
                 currentObject = null;
                 rb = null;
@@ -72,6 +74,10 @@ public class InspectableInteraction : MonoBehaviour
                 Initial_position = Vector3.zero;
                 Rot = Quaternion.Euler(0,0,0);
             }
+        }
+        else
+        {
+            inspectablePanelUI.SetActive(false);
         }
 
         if (isInspecting)
