@@ -15,6 +15,10 @@ public class LightBulb: MonoBehaviour
     bool isOn;
     private Light actualLight;
     // Start is called before the first frame update
+    public GameObject swithcOn;
+    public GameObject swithcOff;
+    
+    
     void Start()
     {
         actualLight = gameObject.GetComponent<Light>();
@@ -24,7 +28,18 @@ public class LightBulb: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isOn)
+        {
+            swithcOff.SetActive(false);
+            swithcOn.SetActive(true);
+           
+        }
+        else
+        {
+            swithcOff.SetActive(true);
+            swithcOn.SetActive(false);
+           
+        }
     }
 
     public void SwitchLight()
@@ -41,7 +56,7 @@ public class LightBulb: MonoBehaviour
             actualLight.enabled = true;
             isOn = !isOn;
             
-                lightSource.PlayOneShot(lightOn);
+            lightSource.PlayOneShot(lightOn);
         } 
     }
 
