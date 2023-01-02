@@ -44,7 +44,7 @@ public class Puzzle_behavior : MonoBehaviour
         }
         if(Input.GetKeyDown("d"))
         {
-            rotate_left();
+            rotate_right();
         }
         float a=0;
         for(int i=0;i<3;i++)
