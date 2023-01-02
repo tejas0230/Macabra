@@ -11,8 +11,8 @@ public class Flashlight : MonoBehaviour
     Ray ray;
     public Camera playerCam;
 
-
-
+    public Light actualLight;
+    bool isOn = false;
     private void Update()
     {
         if (!isFlashHeld)
@@ -26,7 +26,28 @@ public class Flashlight : MonoBehaviour
                 flashLight.transform.localPosition = Vector3.zero; 
                 flashLight.transform.localRotation= Quaternion.Euler(0, 0, 0);
                 flashLight.GetComponent<CapsuleCollider>().enabled = false;
+                isFlashHeld = true;
+                actualLight = flashLight.GetComponentInChildren<Light>();
             }
+        }
+
+        if(isFlashHeld)
+        {
+            if(Input.GetKeyDown(KeyCode.F) )
+            {
+                if(isOn)
+                {
+                    actualLight.enabled = false;
+                    isOn = !isOn;
+                }
+                else
+                {
+                    actualLight.enabled = true;
+                    isOn = !isOn;
+                }
+                
+            }
+            
         }
     }
     void CastRayAlways()

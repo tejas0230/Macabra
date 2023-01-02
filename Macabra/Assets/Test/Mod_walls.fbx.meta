@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 761f585f0b657904d90bafffbe68613a
+guid: 752d0aea7c6295245a55c433b3ba333b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Floor_1
-    second: {fileID: 2100000, guid: 804a08a17c91f954690d92b552a7a51a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Kitchen_Floor
-    second: {fileID: 2100000, guid: 31bae6e3810599b4ea3df0b74c05a017, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 4440dc9d52df5644cbd4dcd2258679ec, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

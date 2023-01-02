@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DoorInteraction : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class DoorInteraction : MonoBehaviour
 
     float rotX;
     bool doorFound = false;
+
+    public GameObject doorUnlockedPanel;
+    public GameObject doorLockedPanel;
+    public TMP_Text keyText;
     private void Update()
     {
         if (!isDoorHeld)
@@ -40,6 +45,8 @@ public class DoorInteraction : MonoBehaviour
 
         if (isDoorHeld)
         {
+            doorLockedPanel.SetActive(false);
+            doorUnlockedPanel.SetActive(false);
             doorProperties.isDoorHeld = true;
             if (doorProperties.isLocked)
                 return;
@@ -73,6 +80,15 @@ public class DoorInteraction : MonoBehaviour
         {
             door = hit.collider.gameObject;
             doorProperties = door.GetComponent<DoorProperties>();
+            if(doorProperties.isLocked)
+            {
+                keyText.text = "You need the " + doorProperties.requiredKeyName + " to unlock.";
+                doorLockedPanel.SetActive(true);
+            }
+            else
+            {
+                doorUnlockedPanel.SetActive(true);
+            }
             doorProperties.isInteracting = true;
             doorFound = true;
         }
@@ -85,7 +101,8 @@ public class DoorInteraction : MonoBehaviour
                     doorProperties.isInteracting = false;
                     doorProperties.isDoorHeld = false;
                 }
-                
+                doorLockedPanel.SetActive(false);
+                doorUnlockedPanel.SetActive(false);
                 doorProperties = null;
                 door = null;
             }
