@@ -3,7 +3,197 @@ guid: f5a72137bf85f504eb16f89dadb3ce6f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bath.001
+    second: {fileID: 2100000, guid: 7c4add6fbf73a9041b76dbc39e3e8d16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bathtube.001
+    second: {fileID: 2100000, guid: 5c3c4078c93a4004296f337a4aa98273, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Candle.001
+    second: {fileID: 2100000, guid: 38e0363c782cfce408cfaaf3692fff8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Mat.001
+    second: {fileID: 2100000, guid: a855e72a5e0c47b4a8ba0dc534b705ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClockCase.001
+    second: {fileID: 2100000, guid: 5135edc23e42ff24ab87348bf43ef868, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clockface.001
+    second: {fileID: 2100000, guid: 265a833a5054a454bb2af5681f367046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ClothMat.001
+    second: {fileID: 2100000, guid: 65e65e6357941e84c9260af6b763b601, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cups.001
+    second: {fileID: 2100000, guid: d3a4c95e328b1e04d9df48c8d2c4c713, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_and_windows.001
+    second: {fileID: 2100000, guid: 44ec26f288aa9e946a1e78c6e6d9c410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fabric.001
+    second: {fileID: 2100000, guid: 13cd20d5d5d437c498cfc3fbc3771ef2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor.001
+    second: {fileID: 2100000, guid: 75b1d8fa48a77e142bafd09762291b6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_1.001
+    second: {fileID: 2100000, guid: 3ea784e6995a44245bb10c1c2f834d3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_2.001
+    second: {fileID: 2100000, guid: 348d8c560817419468851ebfc073f16a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frames.001
+    second: {fileID: 2100000, guid: 2d6c7da9ecbee0b4abcaf3273cb976c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front_table.001
+    second: {fileID: 2100000, guid: 07a83021ef4cf6144a9aff8bf9c573fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gamine_room_wall1_1.001
+    second: {fileID: 2100000, guid: 58dbabb6fe2b24d4fba1edfe67b41a68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: c0d3e393218e68142a975cacd3482a48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_1.001
+    second: {fileID: 2100000, guid: 6aa77bceb8c37f348acf4031c23748c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hall_inside.001
+    second: {fileID: 2100000, guid: 39b55d363aaf35048beeed9f7d9ba259, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchen_Floor.001
+    second: {fileID: 2100000, guid: 02ca157d3bd43174d9138081d8e82b27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kitchen_wall.001
+    second: {fileID: 2100000, guid: 4e5dd739ef9e09f4fbf7dc593e7ef462, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MoonDial.001
+    second: {fileID: 2100000, guid: c66601725b8f35e4190a7750674f2923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Office_wall.001
+    second: {fileID: 2100000, guid: 5637164064b08d444a214061a307e628, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Old_Pc.001
+    second: {fileID: 2100000, guid: a4c9ce8c8977d9740b0777246a0e6581, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Round_table.001
+    second: {fileID: 2100000, guid: d597ca147e8a4724b96d5c300be1f1d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Selling_Bump.001
+    second: {fileID: 2100000, guid: 18fae82edc9ae354799da78f6d8dbfaa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stairs.001
+    second: {fileID: 2100000, guid: 88def84fe807d184d8c02dc4bdeb77e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TV.001
+    second: {fileID: 2100000, guid: 1b5760f1539d1ac43bc00f26d7223892, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TVStand_mat_1.001
+    second: {fileID: 2100000, guid: 070f78cb41dadb743a72b20b5c80297f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TableMat.001
+    second: {fileID: 2100000, guid: 756780fae4cda15468d375bb4f4c3759, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Trim.001
+    second: {fileID: 2100000, guid: c7200deb795e426499f3a8cc8a562636, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls.001
+    second: {fileID: 2100000, guid: 1a80f4196fb8b2e45949e5bcd481c50a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window.001
+    second: {fileID: 2100000, guid: 1e029c2830ba45f4f8f23888142bfebe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_1.001
+    second: {fileID: 2100000, guid: ccba4b300d65cc44ca90e8a9eff082fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window_3.001
+    second: {fileID: 2100000, guid: 4c0d477a09d86f14796e498f7af6eddb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_Floor.001
+    second: {fileID: 2100000, guid: 95d6130a7a276964b82a69550ca46de8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wooden_texture_floor.001
+    second: {fileID: 2100000, guid: a286fd4070ff8d24fa381076e267e5a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sofa.001
+    second: {fileID: 2100000, guid: 5dbe50a0a5c02f843b3db1d8558695fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
