@@ -30,15 +30,21 @@ public class LightBulb: MonoBehaviour
     {
         if(isOn)
         {
-            swithcOff.SetActive(false);
-            swithcOn.SetActive(true);
+            if(swithcOff!=null && swithcOn!=null)
+            {
+                swithcOff.SetActive(false);
+                swithcOn.SetActive(true);
+            }
+            
            
         }
         else
         {
-            swithcOff.SetActive(true);
-            swithcOn.SetActive(false);
-           
+            if (swithcOff != null && swithcOn != null)
+            {
+                swithcOff.SetActive(true);
+                swithcOn.SetActive(false);
+            }
         }
     }
 

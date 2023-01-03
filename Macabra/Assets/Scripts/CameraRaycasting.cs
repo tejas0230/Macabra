@@ -15,17 +15,12 @@ public class CameraRaycasting : MonoBehaviour
     Ray ray;
 
     public GameObject currentInteractable;
-    Rigidbody rb;
-    Vector3 initialPosi;
-    Quaternion inspectableRot;
-    public Transform inspectZone;
-
-    public PlayerController controls;
+    
     
     private void Awake()
     {
         mainCam = Camera.main;
-        controls = FindObjectOfType<PlayerController>();
+        
     }
     void Start()
     {
@@ -47,31 +42,7 @@ public class CameraRaycasting : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*if (currentTarget != null)
-        {
-            if(Input.GetMouseButton(0))
-            {
-                inspectablePosi = currentInteractable.transform.position;
-                inspectableRot = currentInteractable.transform.rotation;
-                if (currentInteractable.tag == "Inspectable")
-                {
-                    
-
-                    currentInteractable.GetComponent<Rigidbody>().useGravity = false;
-                    currentInteractable.GetComponent<Rigidbody>().freezeRotation = true;
-                    currentInteractable.transform.position = mainCam.transform.position + ray.direction * 3;
-                    controls.CanRotateCam = false;
-                    float rotInputX = Input.GetAxis("Mouse X");
-                    float rotInputY = Input.GetAxis("Mouse Y");
-                    currentInteractable.transform.rotation = Quaternion.Euler(rotInputX, rotInputY, 0);
-                }
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                currentInteractable.transform.position = inspectablePosi;
-                currentInteractable.transform.rotation = inspectableRot;
-            }
-        }*/
+        
     }
         
 
@@ -142,30 +113,7 @@ public class CameraRaycasting : MonoBehaviour
     }
 
 
-    void inspect()
-    {
-        currentInteractable.GetComponent<Rigidbody>().useGravity = false;
-        currentInteractable.GetComponent<Rigidbody>().freezeRotation = true;
-        Vector3 nextPos = mainCam.transform.position + ray.direction * 3;
-        Vector3 currPos = currentInteractable.transform.position;
-        
-        currentInteractable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 10;
-    }
-   
-    IEnumerator MoveToTarget(GameObject MovedObject, Vector3 Target, float Speed)
-    {
-        while(MovedObject.transform.position!=Target)
-        {
-            MovedObject.transform.position = Vector3.MoveTowards(MovedObject.transform.position, Target, Time.deltaTime * Speed);
-            yield return null;
-        }
-    }
-
-    IEnumerator TogglePhysics(Rigidbody rb, bool value, float TimeWait)
-    {
-        yield return new WaitForSeconds(TimeWait);
-        rb.isKinematic = !value;
-    }
+    
     
 }
 
