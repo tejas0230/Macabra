@@ -13,7 +13,7 @@ public class DoorProperties : MonoBehaviour
     public bool isInteracting;
     public bool isReversed;
     public bool isDoorHeld;
-    public string requiredKeyName;
+    public InventoryItem requiredKey;
     void Start()
     {
         
@@ -22,7 +22,7 @@ public class DoorProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InventoryManager.instance.items.Contains(requiredKeyName) && requiredKeyName!=null)
+        if(InventoryManager.instance.items.Contains(requiredKey) && requiredKey!=null)
         {
             isLocked = false;
         }

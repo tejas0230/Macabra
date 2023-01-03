@@ -9,6 +9,7 @@ public class Interior2Timeline : MonoBehaviour
     public PlayableAsset obj1Complete;
     public FPSController player;
     public AudioSource phone;
+    public Collider phoneCollider;
     private void Awake()
     {
         if (instance == null)
@@ -45,5 +46,6 @@ public class Interior2Timeline : MonoBehaviour
     {
         player.CanMove = true;
         phone.Play();
+        phoneCollider.enabled = true;
     }
 }

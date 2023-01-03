@@ -9,6 +9,7 @@ public class PickUpItems : MonoBehaviour
     public LayerMask inventoryItemLayer;
     Ray ray;
     private GameObject currentItem;
+    InventoryItem item;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class PickUpItems : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire1"))
             {
-                InventoryManager.instance.items.Add(currentItem.gameObject.name);
+                //nventoryManager.instance.items.Add(currentItem.);
                 Destroy(currentItem);
             }
         }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
-    public List<string> items = new List<string>();
-
+    //public List<string> items = new List<string>();
+    public List<InventoryItem> items = new List<InventoryItem>();
     private void Awake()
     {
         if (instance == null)
@@ -29,12 +29,12 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    public void addToInventory(string item)
+    public void addToInventory(InventoryItem item)
     {
         items.Add(item);
     }
 
-    public void removeFromInventory(string item)
+    public void removeFromInventory(InventoryItem item)
     {
         items.Remove(item);
     }
