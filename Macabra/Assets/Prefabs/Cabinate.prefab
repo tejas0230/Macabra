@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &7218649393694419058
 Transform:
@@ -99,7 +99,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4428088444647895071
 Transform:
@@ -604,7 +604,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &2780098682421476492
 Transform:
@@ -691,6 +691,7 @@ MonoBehaviour:
   isInteracting: 0
   isReversed: 0
   isDoorHeld: 0
+  requiredKey: {fileID: 0}
 --- !u!65 &5821398531990286858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -758,7 +759,7 @@ GameObject:
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4012606619532968956
 Transform:
@@ -845,6 +846,7 @@ MonoBehaviour:
   isInteracting: 0
   isReversed: 0
   isDoorHeld: 0
+  requiredKey: {fileID: 0}
 --- !u!65 &7000477014354516997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -875,7 +877,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &126503761773499825
 Transform:

@@ -187,7 +187,7 @@ Material:
     - _RequireSplitLighting: 0
     - _SPECULAR_IOR: 1.33
     - _SPECULAR_ROUGHNESS: 0.62
-    - _Smoothness: 0.193
+    - _Smoothness: 0.425
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
