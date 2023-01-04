@@ -185,8 +185,8 @@ Material:
     - _RefractionModel: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
-    - _SPECULAR_IOR: 1.5
-    - _SPECULAR_ROUGHNESS: 1.13
+    - _SPECULAR_IOR: 1.33
+    - _SPECULAR_ROUGHNESS: 0.62
     - _Smoothness: 0.193
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -219,7 +219,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _BASE_COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _BASE_COLOR: {r: 0.7830189, g: 0.6998782, b: 0.6677821, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: 1, a: 0}
