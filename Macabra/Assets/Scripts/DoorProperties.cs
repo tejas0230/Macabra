@@ -39,9 +39,15 @@ public class DoorProperties : MonoBehaviour
     {
         while (transform.localRotation != Quaternion.Euler(0, 0, 0))
         {
-            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 0), 2 * Time.deltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.Euler(0, 0, 0), 15 * Time.deltaTime);
             yield return null;
         }
+    }
+
+
+    public void CloseDoorSlam()
+    {
+        StartCoroutine(CloseDoor());
     }
     
 }

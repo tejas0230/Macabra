@@ -78,12 +78,18 @@ public class LightBulb: MonoBehaviour
     {
         while(isOn!=false)
         {
-            gameObject.GetComponent<Light>().intensity = (float)Random.Range(0, 5);
-            yield return new WaitForSecondsRealtime(0.3f);
+            gameObject.GetComponent<Light>().intensity = (float)Random.Range(0, 60);
+            yield return new WaitForSecondsRealtime((float)Random.Range(0.01f,0.1f));
         }
     }
     public void FlickerLights()
     {
         StartCoroutine(Flicker());
+    }
+
+    public void StopFlickering()
+    {
+        isOn = false;
+        
     }
 }
