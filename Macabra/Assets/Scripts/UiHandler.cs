@@ -22,10 +22,10 @@ public class UiHandler : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-   
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -41,6 +41,11 @@ public class UiHandler : MonoBehaviour
     {
         SceneController.instance.FadeToLevel(1);
         //MainMenu.SetActive(false);
+    }
+
+    public void endscreen()
+    {
+        SceneController.instance.FadeToLevel(3);// this is for fading to the credits scene
     }
 
     public void StartObjectiveAnim(string text, float timeToWait)
