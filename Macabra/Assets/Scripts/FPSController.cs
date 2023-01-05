@@ -58,6 +58,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] private AudioSource footStepAudioSource = default;
     [SerializeField] private AudioClip[] woodClips = default;
     [SerializeField] private AudioClip[] grassClips = default;
+    [SerializeField] private AudioClip[] tileClips = default;
     private float footStepTimer = 0;
     private float GetCurrentOffset => isCrouching ? baseStepSpeed * crouchStepMultiplier : IsSprinting ? baseStepSpeed * sprintStepMultiplier : baseStepSpeed;
 
@@ -150,8 +151,12 @@ public class FPSController : MonoBehaviour
                         break;
 
                     case "Grass":
-                        footStepAudioSource.PlayOneShot(grassClips[Random.Range(0, woodClips.Length - 1)]);
+                        footStepAudioSource.PlayOneShot(grassClips[Random.Range(0, grassClips.Length - 1)]);
                         //Debug.Log("played");
+                        break;
+
+                    case "Tile":
+                        footStepAudioSource.PlayOneShot(tileClips[Random.Range(0, tileClips.Length - 1)]);
                         break;
 
                     default:

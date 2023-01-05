@@ -91,8 +91,8 @@ public class PlayerUIManager : MonoBehaviour
         foreach (InventoryItem item in InventoryManager.instance.items)
         {
             GameObject obj = Instantiate(itemUI, inventoryPanel);
-            Image objImg = obj.GetComponentInChildren<Image>();
-            TMP_Text objText = obj.GetComponentInChildren<TMP_Text>();
+            Image objImg = obj.transform.Find("Icon").GetComponent<Image>();
+            TMP_Text objText = obj.transform.Find("Name").GetComponent<TMP_Text>();
             objImg.sprite = item.icon;
             objText.text = item.itemName;
         }

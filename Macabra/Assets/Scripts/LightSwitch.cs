@@ -18,7 +18,7 @@ public class LightSwitch: MonoBehaviour
     bool isOn;
     public Light actualLight;*/
 
-    public float MaxRange => 2;
+    public float MaxRange => 5;
 
     public void OnStartHover()
     {

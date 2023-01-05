@@ -73,6 +73,13 @@ public class LightBulb: MonoBehaviour
         
             lightSource.PlayOneShot(lightOff);
     }
+    public void SwitchLightOn()
+    {
+        actualLight.enabled = true;
+        isOn = true;
+
+        lightSource.PlayOneShot(lightOn);
+    }
 
     IEnumerator Flicker()
     {

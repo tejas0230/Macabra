@@ -9,6 +9,8 @@ TagManager:
   - Door
   - InteractItem
   - Inspectable
+  - Wood
+  - Tile
   layers:
   - Default
   - TransparentFX

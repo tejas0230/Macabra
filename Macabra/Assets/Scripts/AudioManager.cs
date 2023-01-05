@@ -1,7 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
@@ -29,8 +29,13 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Play("Music");
-        Play("Ambience");
+        if(SceneManager.GetActiveScene().buildIndex==1)
+        {
+            Play("Music");
+            Play("Ambience");
+        }
+       
+        
     }
 
     public void Play(string name)

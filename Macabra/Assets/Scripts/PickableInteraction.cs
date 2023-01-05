@@ -15,7 +15,7 @@ public class PickableInteraction : MonoBehaviour
     private bool isInspecting = false;
     Ray ray;
     public GameObject pickablePanelUI;
-   
+    Collider pikableCollider;
     void Start()
     {
         isObjectPicked = false;
@@ -107,6 +107,7 @@ public class PickableInteraction : MonoBehaviour
                 isObjectPicked = true;
                 currentPickable.GetComponent<Rigidbody>().useGravity = false;
                 currentPickable.GetComponent<Rigidbody>().freezeRotation = true;
+                currentPickable.GetComponent<Collider>().enabled = false;
             }
         }
         else
@@ -130,7 +131,9 @@ public class PickableInteraction : MonoBehaviour
         tryPickupObject = false;
         currentPickable.GetComponent<Rigidbody>().useGravity = true;
         currentPickable.GetComponent<Rigidbody>().freezeRotation = false;
+        currentPickable.GetComponent<Collider>().enabled = true;
         currentPickable = null;
+        
     }
 }
 

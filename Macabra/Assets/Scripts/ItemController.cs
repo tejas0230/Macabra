@@ -6,12 +6,14 @@ public class ItemController : MonoBehaviour, IInteractable
 {
 
     public InventoryItem item;
-
+    public GameObject crosshair;
+    public GameObject hand;
     public float MaxRange => 2;
 
     public void OnEndHover()
     {
-        print("OnEndHove");
+        hand.SetActive(false);
+        crosshair.SetActive(true);
     }
 
     public void OnInteract()
@@ -22,7 +24,9 @@ public class ItemController : MonoBehaviour, IInteractable
 
     public void OnStartHover()
     {
-        print("OnStartHove");
+        crosshair.SetActive(false);
+        hand.SetActive(true);
+        
     }
 
     // Start is called before the first frame update

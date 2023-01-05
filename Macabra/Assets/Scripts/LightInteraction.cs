@@ -27,7 +27,7 @@ public class LightInteraction : MonoBehaviour
     void CastRayAlways()
     {
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        if (Physics.Raycast(ray, out RaycastHit hit, 70, lightLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 5, lightLayer))
         {
             crosshair.SetActive(false);
             lightBulbUI.SetActive(true);
