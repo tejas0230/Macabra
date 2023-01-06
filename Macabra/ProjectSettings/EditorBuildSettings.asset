@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TEJAS_TEST.unity
     guid: 91cbdbb348626a24da71bf3a24be47b4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a8cc9d6861904e643a1f4a9698eaf81b
   m_configObjects: {}
