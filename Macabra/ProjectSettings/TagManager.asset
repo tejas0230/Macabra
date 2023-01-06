@@ -11,6 +11,7 @@ TagManager:
   - Inspectable
   - Wood
   - Tile
+  - SecretRoomWall
   layers:
   - Default
   - TransparentFX

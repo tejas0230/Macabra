@@ -2528,7 +2528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fdad565e215a6458ac342f1dd5bf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
+  walkSpeed: 2
   gravity: 1000
   sprintSpeed: 6
   crouchSpeed: 1.5
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   crouchingCenter: {x: 0, y: 0.5, z: 0}
   standingCenter: {x: 0, y: 0.1, z: 0}
   walkBobSpeed: 14
-  walkBobAmount: 0.05
+  walkBobAmount: 0.01
   sprintBobSpeed: 18
   sprintBobAmount: 0.1
   crouchBobSpeed: 8
@@ -2558,10 +2558,25 @@ MonoBehaviour:
   sprintStepMultiplier: 0.6
   footStepAudioSource: {fileID: 2944475781658448458}
   woodClips:
-  - {fileID: 8300000, guid: b818d0dd6ef46ba429710e32bba0a9ed, type: 3}
-  - {fileID: 8300000, guid: 4b958995b955ca048b5b5a4f7cd44048, type: 3}
-  - {fileID: 8300000, guid: 01c46b25df70a7445bed0e9d646e4a8c, type: 3}
-  - {fileID: 8300000, guid: c8387b6bcd4c3cc4abfa7784dfbf8ada, type: 3}
+  - {fileID: 8300000, guid: 518e5b59a70a77443b8882ffbd78c6a9, type: 3}
+  - {fileID: 8300000, guid: d007871ee1a82594e9abbfd722db6c0b, type: 3}
+  - {fileID: 8300000, guid: 6704227bcb09eef43975944c43c13b6d, type: 3}
+  - {fileID: 8300000, guid: 7f04eea6a2bd7cd4a89febb87d64bdbd, type: 3}
+  - {fileID: 8300000, guid: c2aaeb7006a08294fb13dd59e47a5c44, type: 3}
+  - {fileID: 8300000, guid: a3dcbb6f53ff63a4685df13da5ecfdfc, type: 3}
+  - {fileID: 8300000, guid: 332265c234ebb49499a48457940d477b, type: 3}
+  - {fileID: 8300000, guid: 1d09d4ae2369bf94a9eec5c88aef1b1f, type: 3}
+  - {fileID: 8300000, guid: 84a14cf35f7795d418ffb6089360b648, type: 3}
+  - {fileID: 8300000, guid: 042ea3d11af02f04b912f30dbc16459b, type: 3}
+  - {fileID: 8300000, guid: e649af382f96c564dab130ff7c2bd66f, type: 3}
+  - {fileID: 8300000, guid: 84a14732779660140a185137170e1fba, type: 3}
+  - {fileID: 8300000, guid: 2d402122e5a37144ca1f12f0c54ee571, type: 3}
+  - {fileID: 8300000, guid: 1ce2bd13102d25b4f8a13151389a1d4d, type: 3}
+  - {fileID: 8300000, guid: c441f6aa92465ff48bc073c032547d34, type: 3}
+  - {fileID: 8300000, guid: 1035aea57b37cdd48b81eb84c56ec7d0, type: 3}
+  - {fileID: 8300000, guid: 2dfe27715bb06c445aeda74485862213, type: 3}
+  - {fileID: 8300000, guid: b6061aa661a68fb45bfa25f123b144e1, type: 3}
+  - {fileID: 8300000, guid: 5ed4b39c303e98941883359f56939831, type: 3}
   grassClips:
   - {fileID: 8300000, guid: 88a1375da9ad11e4596a002ee355aa74, type: 3}
   - {fileID: 8300000, guid: 31ff66c001bffcd41af817cbc5026715, type: 3}
@@ -2569,6 +2584,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4979d1953637c9d4a8db03389fe6fb9c, type: 3}
   - {fileID: 8300000, guid: a29851b291dbc9749bfbf64e1352be5e, type: 3}
   - {fileID: 8300000, guid: 2d4fc0e4a889562488a2d59452db761a, type: 3}
+  tileClips:
+  - {fileID: 8300000, guid: e80e53baffec0a94f843593e7a1d4404, type: 3}
+  - {fileID: 8300000, guid: 32eadcfe7369ae9439044278b40255c8, type: 3}
+  - {fileID: 8300000, guid: 24213e51ca779c84db5447f37b45dbb8, type: 3}
+  - {fileID: 8300000, guid: 7c58a4012ba8b754da463e1c3919b647, type: 3}
+  - {fileID: 8300000, guid: 92fe0c11bd5d58f4b87e3a15cc75ba6c, type: 3}
+  - {fileID: 8300000, guid: 2a0c90e295c9c544c81ca790b98cf945, type: 3}
+  - {fileID: 8300000, guid: 390423e59b38ea04c9260e63a3c0342d, type: 3}
+  - {fileID: 8300000, guid: a1044c2ee3fda3d45bebf5f9b8102393, type: 3}
   playerCamera: {fileID: 2944475781754497052}
   characterController: {fileID: 2944475781658448436}
 --- !u!82 &2944475781658448458
@@ -2583,7 +2607,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.263
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -57,3 +57,9 @@ MonoBehaviour:
     pitch: 1.18
     loop: 1
     source: {fileID: 0}
+  - name: Stinger1
+    clip: {fileID: 8300000, guid: d96742c206534374985b34c4b754cb5e, type: 3}
+    volume: 1
+    pitch: 1.26
+    loop: 0
+    source: {fileID: 0}

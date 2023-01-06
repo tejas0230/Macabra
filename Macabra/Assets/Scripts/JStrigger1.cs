@@ -12,6 +12,7 @@ public class JStrigger1 : MonoBehaviour
     float jumpScareTime = 0.2f;
     float currentime = 0;
     float intensity = 0;
+    public GameObject decals;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +30,10 @@ public class JStrigger1 : MonoBehaviour
         {
             AudioManager.instance.Play("Stinger1");
             BasementLight.GetComponent<LightBulb>().FlickerLights();
-            other.gameObject.GetComponent<FPSController>().CanMove = false;
+            //other.gameObject.GetComponent<FPSController>().CanMove = false;
             StartCoroutine(jumpScare1());
-            other.gameObject.GetComponent<FPSController>().CanMove = true;
-
+            //other.gameObject.GetComponent<FPSController>().CanMove = true;
+            decals.SetActive(true);
         }
     }
 
