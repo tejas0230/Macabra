@@ -17,11 +17,12 @@ public class LightBulb: MonoBehaviour
     // Start is called before the first frame update
     public GameObject swithcOn;
     public GameObject swithcOff;
-    
-    
+
+    public GameObject glass;
     void Start()
     {
         actualLight = gameObject.GetComponent<Light>();
+        
         //SwitchLight();
     }
 
@@ -54,14 +55,16 @@ public class LightBulb: MonoBehaviour
         {
             actualLight.enabled = false;
             isOn = !isOn;
-            
-                lightSource.PlayOneShot(lightOff);
+            if(glass!=null)
+                glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+            lightSource.PlayOneShot(lightOff);
         }
         else
         {
             actualLight.enabled = true;
             isOn = !isOn;
-            
+            if (glass != null)
+                glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
             lightSource.PlayOneShot(lightOn);
         } 
     }

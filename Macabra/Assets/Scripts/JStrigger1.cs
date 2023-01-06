@@ -8,7 +8,7 @@ public class JStrigger1 : MonoBehaviour
     public GameObject babyModel;
     public Light BasementLight;
     public DoorProperties doorToShut;
-
+    public Light Flash;
     float jumpScareTime = 0.2f;
     float currentime = 0;
     float intensity = 0;
@@ -29,7 +29,10 @@ public class JStrigger1 : MonoBehaviour
         {
             AudioManager.instance.Play("Stinger1");
             BasementLight.GetComponent<LightBulb>().FlickerLights();
+            other.gameObject.GetComponent<FPSController>().CanMove = false;
             StartCoroutine(jumpScare1());
+            other.gameObject.GetComponent<FPSController>().CanMove = true;
+
         }
     }
 
@@ -45,7 +48,10 @@ public class JStrigger1 : MonoBehaviour
         }
         BasementLight.GetComponent<LightBulb>().SwitchLightOff();
         BasementLight.intensity = intensity;
+        Flash.enabled = false;
+        doorToShut.CloseDoorSlam();
         babyModel.SetActive(false);
+        gameObject.SetActive(false);
        //AudioManager.instance.Play("");
     }
 }

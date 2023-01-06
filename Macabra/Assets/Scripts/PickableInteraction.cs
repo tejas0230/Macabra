@@ -59,7 +59,8 @@ public class PickableInteraction : MonoBehaviour
                 isInteracting = false;
             }
         }
-            
+           
+         
     }
 
     void CastRayAlways()
@@ -110,10 +111,7 @@ public class PickableInteraction : MonoBehaviour
                 currentPickable.GetComponent<Collider>().enabled = false;
             }
         }
-        else
-        {
-            currentPickable = null;
-        }
+       
     }
 
 
@@ -123,7 +121,7 @@ public class PickableInteraction : MonoBehaviour
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 nextPos = playerCam.transform.position + ray.direction * 0.5f;
         Vector3 currPos = currentPickable.transform.position;
-        currentPickable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 10;
+        currentPickable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 30;
     }
     private void DropObject()
     {
@@ -135,5 +133,7 @@ public class PickableInteraction : MonoBehaviour
         currentPickable = null;
         
     }
+
+    
 }
 
