@@ -5,7 +5,7 @@ using UnityEngine;
 public class DrawerInteraction : MonoBehaviour
 {
     public FPSController controls;
-    public LayerMask drawerLayer;
+    //public LayerMask drawerLayer;
     public Camera playerCam;
     Ray ray;
     bool isDrawerHeld;
@@ -26,71 +26,41 @@ public class DrawerInteraction : MonoBehaviour
         if (!isDrawerHeld)
             CastRayAlways();
 
-        if (Input.GetButton("Fire1") && drawer != null)
+        if(drawer!=null)
         {
-            isDrawerHeld = true;
-
-            controls.CanRotateCam = false;
-
-        }
-        else
-        {
-            isDrawerHeld = false;
-            if (drawerProperties != null)
+            if(Input.GetButtonDown("Fire1"))
             {
-
-                drawerProperties.isDrawerHeld = false;
+                drawer.transform.Translate(drawerProperties.FinalPos, Space.Self);
+                //StartCoroutine(openDrawer());
             }
-            controls.CanRotateCam = true;
-
-        }
-
-        if (isDrawerHeld)
-        {
-            drawerProperties.isDrawerHeld = true;
-            if (drawerProperties.isLocked)
-                return;
-
-            if (Input.GetAxis("Mouse Y") > 0 && drawer.transform.position.x > drawerProperties.minLimit) 
-            {
-                drawer.transform.position += Vector3.left*slideY* Time.deltaTime;
-            }
-            else if(Input.GetAxis("Mouse Y") < 0 && drawer.transform.position.x < drawerProperties.maxLimit)
-            {
-                drawer.transform.position += Vector3.right * slideY * Time.deltaTime;
-            }
-            /*slideY -= Input.GetAxis("Mouse Y");
-            slideY = Mathf.Clamp(slideY, drawerProperties.minLimit, drawerProperties.maxLimit);*/
-
-           /* drawer.transform.Translate(new Transform(slideY*Time.deltaTime, drawer.transform.position.y, drawer.transform.position.z));*/
-            /*drawer.transform.position = Vector3.Lerp(drawer.transform.position, new Vector3(slideY, 0, 0), 10 * Time.deltaTime);*/
         }
     }
 
     void CastRayAlways()
     {
+        int drawerLayer = 1 << 10;
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hit, 2, drawerLayer))
         {
             drawer = hit.collider.gameObject;
             drawerProperties = drawer.GetComponent<DrawerProperties>();
-            drawerProperties.isInteracting = true;
             drawerFound = true;
         }
         else
         {
-            if (drawerFound)
-            {
-                if (drawerProperties != null)
-                {
-                    drawerProperties.isInteracting = false;
-                    drawerProperties.isDrawerHeld = false;
-                }
 
-                drawerProperties = null;
+            drawerProperties = null;
                 drawer = null;
-            }
+            
 
         }
     }
+
+    /*IEnumerator openDrawer(GameObject Drawer, DrawerProperties properties)
+    {
+        while(drawer.transform.position != properties.FinalPos.position)
+        {
+            
+        }
+    }*/
 }

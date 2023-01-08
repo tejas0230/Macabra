@@ -73,14 +73,14 @@ public class LightBulb: MonoBehaviour
     {
         actualLight.enabled = false;
         isOn = false;
-        
-            lightSource.PlayOneShot(lightOff);
+        glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+        lightSource.PlayOneShot(lightOff);
     }
     public void SwitchLightOn()
     {
         actualLight.enabled = true;
         isOn = true;
-
+        glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
         lightSource.PlayOneShot(lightOn);
     }
 

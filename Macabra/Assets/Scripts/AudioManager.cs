@@ -44,12 +44,13 @@ public class AudioManager : MonoBehaviour
         {
             Stop("Music");
             Stop("Ambience");
+            Play("Hum");
         }
     }
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        /*if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             if(!ifPlayed)
             {
@@ -74,8 +75,9 @@ public class AudioManager : MonoBehaviour
             {
                 Stop("Music");
                 Stop("Ambience");
+                ifPlayed = true;
             }
-        }
+        }*/
     }
     public void Play(string name)
     {

@@ -13,6 +13,7 @@ public class JStrigger1 : MonoBehaviour
     float currentime = 0;
     float intensity = 0;
     public GameObject decals;
+    public GameObject JS2;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,29 +31,36 @@ public class JStrigger1 : MonoBehaviour
         {
             AudioManager.instance.Play("Stinger1");
             BasementLight.GetComponent<LightBulb>().FlickerLights();
+            
             //other.gameObject.GetComponent<FPSController>().CanMove = false;
-            StartCoroutine(jumpScare1());
+            StartCoroutine(jumpScare1(other));
             //other.gameObject.GetComponent<FPSController>().CanMove = true;
             decals.SetActive(true);
+            JS2.SetActive(true);
         }
     }
 
-    IEnumerator jumpScare1()
+    IEnumerator jumpScare1(Collider other)
     {
         
         while(currentime<=jumpScareTime)
         {
+            
             babyModel.SetActive(true);
+            babyModel.transform.position = Vector3.MoveTowards(babyModel.transform.position, other.transform.position,15*Time.deltaTime);
+            babyModel.transform.LookAt(other.transform,Vector3.up);
             yield return new WaitForSeconds((float)Random.Range(0.01f, 0.04f));
             babyModel.SetActive(false);
             currentime += Time.deltaTime;
+
         }
         BasementLight.GetComponent<LightBulb>().SwitchLightOff();
         BasementLight.intensity = intensity;
-        Flash.enabled = false;
+        
         doorToShut.CloseDoorSlam();
         babyModel.SetActive(false);
         gameObject.SetActive(false);
-       //AudioManager.instance.Play("");
+        Flash.enabled = false;
+        //AudioManager.instance.Play("");
     }
 }

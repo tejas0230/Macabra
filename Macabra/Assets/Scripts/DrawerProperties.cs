@@ -5,13 +5,9 @@ using UnityEngine;
 public class DrawerProperties : MonoBehaviour
 {
     public bool isLocked;
-    public float minLimit;
-    public float maxLimit;
+    public Vector3 InitialPos;
+    public Vector3 FinalPos;
 
-    
-    public bool isInteracting;
-    
-    public bool isDrawerHeld;
     // Start is called before the first frame update
     void Start()
     {

@@ -10,7 +10,9 @@ public class Flashlight : MonoBehaviour
     public Transform flashLocation;
     Ray ray;
     public Camera playerCam;
-
+    AudioSource flashSource;
+    public AudioClip flashon;
+    public AudioClip flashof;
     public Light actualLight;
     bool isOn = false;
     private void Update()
@@ -25,7 +27,9 @@ public class Flashlight : MonoBehaviour
                 flashLight.transform.SetParent(flashLocation);
                 flashLight.transform.localPosition = Vector3.zero; 
                 flashLight.transform.localRotation= Quaternion.Euler(0, 0, 0);
+                flashSource = flashLight.GetComponent<AudioSource>();
                 flashLight.GetComponent<CapsuleCollider>().enabled = false;
+                flashSource.PlayOneShot(flashof);
                 isFlashHeld = true;
                 actualLight = flashLight.GetComponentInChildren<Light>();
             }
@@ -38,11 +42,14 @@ public class Flashlight : MonoBehaviour
                 if(isOn)
                 {
                     actualLight.enabled = false;
+                    flashSource.PlayOneShot(flashof);
                     isOn = !isOn;
                 }
                 else
                 {
                     actualLight.enabled = true;
+                    flashSource.PlayOneShot(flashon);
+
                     isOn = !isOn;
                 }
                 

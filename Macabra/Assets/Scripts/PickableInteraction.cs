@@ -57,6 +57,7 @@ public class PickableInteraction : MonoBehaviour
             else if (Input.GetButtonDown("Fire2") && isObjectPicked && currentPickable != null)
             {
                 isInteracting = false;
+                currentPickable.GetComponent<Collider>().enabled = true;
             }
         }
            
@@ -68,7 +69,8 @@ public class PickableInteraction : MonoBehaviour
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hit, 2, pickableLayer))
         {
-            currentPickable = hit.collider.gameObject;
+             currentPickable = hit.collider.gameObject;
+            
             pickablePanelUI.SetActive(true);
          }
         else
@@ -93,6 +95,7 @@ public class PickableInteraction : MonoBehaviour
         }
         else if (isObjectPicked)
         {
+            
             DropObject();
         }
     }
@@ -121,15 +124,16 @@ public class PickableInteraction : MonoBehaviour
         ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         Vector3 nextPos = playerCam.transform.position + ray.direction * 0.5f;
         Vector3 currPos = currentPickable.transform.position;
-        currentPickable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 30;
+        currentPickable.GetComponent<Rigidbody>().velocity = (nextPos - currPos) * 40;
     }
     private void DropObject()
     {
         isObjectPicked = false;
         tryPickupObject = false;
+        currentPickable.GetComponent<Collider>().enabled = true;
         currentPickable.GetComponent<Rigidbody>().useGravity = true;
         currentPickable.GetComponent<Rigidbody>().freezeRotation = false;
-        currentPickable.GetComponent<Collider>().enabled = true;
+        
         currentPickable = null;
         
     }

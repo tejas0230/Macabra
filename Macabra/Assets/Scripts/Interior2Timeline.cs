@@ -7,7 +7,8 @@ public class Interior2Timeline : MonoBehaviour
     public static Interior2Timeline instance;
     public PlayableDirector int2Timeline;
     public PlayableAsset obj1Complete;
-    public FPSController player;
+    //public FPSController player;
+    public GameObject player;
     public AudioSource phone;
     public Collider phoneCollider;
 
@@ -40,13 +41,13 @@ public class Interior2Timeline : MonoBehaviour
     {
         int2Timeline.playableAsset = obj;
         int2Timeline.Play();
-        player.CanMove = false;
+        player.SetActive(false);
     }
 
 
     public void resetPlayer()
     {
-        player.CanMove = true;
+        player.SetActive(true);
         phone.Play();
         phoneCollider.enabled = true;
     }

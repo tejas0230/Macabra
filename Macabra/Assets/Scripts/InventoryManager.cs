@@ -38,4 +38,15 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
     }
+
+    public int count(InventoryItem item)
+    {
+        int a = 0;
+        foreach(InventoryItem i in items)
+        {
+            if (i == item)
+                a++;
+        }
+        return a;
+    }
 }

@@ -72,7 +72,11 @@ public class ObjectiveTrigger : MonoBehaviour
         {
             if (anyRequiredUI != null)
                 anyRequiredUI.SetActive(false);
-
+            if(interactionType==InteractionType.walkToInteract)
+            {
+                this.gameObject.SetActive(false);
+            }
+        
         }
     }
     private void OnTriggerStay(Collider other)
@@ -90,6 +94,7 @@ public class ObjectiveTrigger : MonoBehaviour
                             SetNewObjective();
                             playCutscene();
                             isObjGiven = true;
+                            this.gameObject.SetActive(false);
                         }
 
                     }
@@ -102,6 +107,7 @@ public class ObjectiveTrigger : MonoBehaviour
                             CompleteObjective(completeId);
                             playCutscene();
                             isObjComplete = true;
+                            this.gameObject.SetActive(false);
                         }
                         
                         
@@ -111,7 +117,7 @@ public class ObjectiveTrigger : MonoBehaviour
                     {
                         CompleteAndSetNewObjective(completeId);
                         playCutscene();
-                        
+                        this.gameObject.SetActive(false);
                     }
                 }
 
