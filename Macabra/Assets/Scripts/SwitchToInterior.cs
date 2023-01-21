@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwitchToInterior : MonoBehaviour
 {
     bool canSwitchScene = false;
+    public GameObject mainDoorCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class SwitchToInterior : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             canSwitchScene = true;
+            mainDoorCanvas.SetActive(true);
         }
     }
 
@@ -33,6 +35,8 @@ public class SwitchToInterior : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             canSwitchScene = false;
+            mainDoorCanvas.SetActive(false);
+
         }
     }
 }

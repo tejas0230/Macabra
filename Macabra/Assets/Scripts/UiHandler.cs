@@ -45,7 +45,8 @@ public class UiHandler : MonoBehaviour
 
     public void endscreen()
     {
-        SceneController.instance.FadeToLevel(3);// this is for fading to the credits scene
+        //SceneController.instance.FadeToLevel(3);// this is for fading to the credits scene
+        Application.Quit();
     }
 
     public void StartObjectiveAnim(string text, float timeToWait)

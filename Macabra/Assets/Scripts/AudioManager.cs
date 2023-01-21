@@ -50,24 +50,24 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        /*if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            if(!ifPlayed)
+            if (!ifPlayed)
             {
                 Play("Music");
                 ifPlayed = true;
             }
-                
+
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            if(ifPlayed)
+            if (ifPlayed)
             {
                 Stop("Music");
                 Play("Ambience");
                 ifPlayed = false;
             }
-            
+
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour
                 Stop("Ambience");
                 ifPlayed = true;
             }
-        }*/
+        }
     }
     public void Play(string name)
     {
