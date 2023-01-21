@@ -109,7 +109,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SPECULAR_ROUGHNESS_MAP:
-        m_Texture: {fileID: 2800000, guid: f8c3426f6231bf44b9ba463514ac6094, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2df72382ad9d46a44affa7eb002c3a85, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -176,7 +176,7 @@ Material:
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _SPECULAR_IOR: 1.5
-    - _SPECULAR_ROUGHNESS: 2.59
+    - _SPECULAR_ROUGHNESS: 2.1
     - _Smoothness: 0.25123277
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
