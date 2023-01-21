@@ -30,8 +30,7 @@ public class JStrigger1 : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             AudioManager.instance.Play("Stinger1");
-            BasementLight.GetComponent<LightBulb>().FlickerLights();
-            
+            BasementLight.GetComponent<LightBulb>().FlickerLight();            
             //other.gameObject.GetComponent<FPSController>().CanMove = false;
             StartCoroutine(jumpScare1(other));
             //other.gameObject.GetComponent<FPSController>().CanMove = true;
@@ -47,7 +46,7 @@ public class JStrigger1 : MonoBehaviour
         {
             
             babyModel.SetActive(true);
-            babyModel.transform.position = Vector3.MoveTowards(babyModel.transform.position, other.transform.position,15*Time.deltaTime);
+            //babyModel.transform.position = Vector3.MoveTowards(babyModel.transform.position, other.transform.position,15*Time.deltaTime);
             babyModel.transform.LookAt(other.transform,Vector3.up);
             yield return new WaitForSeconds((float)Random.Range(0.01f, 0.04f));
             babyModel.SetActive(false);

@@ -9,10 +9,12 @@ public class PhoneScript : MonoBehaviour,IInteractable
     public AudioClip ring;
     public AudioClip iCanSeeYou;
     public float MaxRange => 2;
-
+    public GameObject crossHair;
+    public GameObject hand;
     public void OnEndHover()
     {
-        throw new System.NotImplementedException();
+        hand.SetActive(false);
+        crossHair.SetActive(true);
     }
 
     public void OnInteract()
@@ -24,7 +26,8 @@ public class PhoneScript : MonoBehaviour,IInteractable
 
     public void OnStartHover()
     {
-        throw new System.NotImplementedException();
+        crossHair.SetActive(false);
+        hand.SetActive(true);
     }
 
     // Start is called before the first frame update

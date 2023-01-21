@@ -16,6 +16,7 @@ public class fuseItem : MonoBehaviour,IInteractable
     public GameObject fusePanel;
     public TMP_Text fuseText;
     public GameObject jumpScare1Trigger;
+    public GameObject obj2completeTrigger;
     bool lightTurnedOn = false;
     public void OnEndHover()
     {
@@ -61,8 +62,10 @@ public class fuseItem : MonoBehaviour,IInteractable
             {
                 l.GetComponent<LightBulb>().SwitchLightOn();
             }
+            InventoryManager.instance.canTurnLightsOn = true;
             lightTurnedOn = true;
             jumpScare1Trigger.SetActive(true);
+            obj2completeTrigger.SetActive(true);
         }
     }
 

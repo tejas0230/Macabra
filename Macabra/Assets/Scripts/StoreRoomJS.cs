@@ -11,6 +11,7 @@ public class StoreRoomJS : MonoBehaviour
     int fuseCount;
     public GameObject childBoneFace;
     bool isSoundPlayed = false;
+    
     void Start()
     {
         
@@ -48,7 +49,7 @@ public class StoreRoomJS : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            
+            other.gameObject.GetComponentInChildren<Flashlight>().turnFlashOff();
         }
     }
 
@@ -57,6 +58,7 @@ public class StoreRoomJS : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             childBoneFace.transform.LookAt(other.transform.GetChild(0).transform, Vector3.up);
+            other.gameObject.GetComponentInChildren<Flashlight>().canTurnOn = false;
             /*Vector3 viewPos = other.GetComponentInChildren<Camera>().WorldToViewportPoint(child.transform.position);
             if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
             {
@@ -88,6 +90,7 @@ public class StoreRoomJS : MonoBehaviour
         {
             child.transform.Translate(new Vector3(child.transform.position.x, child.transform.position.y, child.transform.position.z+12));
             AudioManager.instance.Play("storeRoomStinger");
+            other.gameObject.GetComponentInChildren<Flashlight>().canTurnOn = true;
         }
     }
 }

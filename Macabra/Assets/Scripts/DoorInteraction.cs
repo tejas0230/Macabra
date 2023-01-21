@@ -82,7 +82,15 @@ public class DoorInteraction : MonoBehaviour
             doorProperties = door.GetComponent<DoorProperties>();
             if(doorProperties.isLocked)
             {
-                keyText.text = "You need the " + doorProperties.requiredKey.itemName + " to unlock.";
+                if(doorProperties.requiredKey!=null)
+                {
+                    keyText.text = "You need the " + doorProperties.requiredKey.itemName + " to unlock.";
+
+                }
+                else
+                {
+                    keyText.text = "Door is locked";
+                }
                 doorLockedPanel.SetActive(true);
             }
             else

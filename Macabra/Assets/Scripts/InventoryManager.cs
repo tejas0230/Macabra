@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     //public List<string> items = new List<string>();
     public List<InventoryItem> items = new List<InventoryItem>();
+    public bool canTurnLightsOn = true;
     private void Awake()
     {
         if (instance == null)

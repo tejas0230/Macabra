@@ -6,6 +6,8 @@ public class FlickerLightTrigger : MonoBehaviour
 {
 
     public List<Light> acutalLights = new List<Light>();
+    public LightTriggerType triggerType;
+    public GameObject otherTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,30 @@ public class FlickerLightTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            foreach(Light l in acutalLights)
+            if(triggerType == LightTriggerType.flicker)
             {
-                l.GetComponent<LightBulb>().FlickerLights();
+                foreach (Light l in acutalLights)
+                {
+                    l.GetComponent<LightBulb>().FlickerLights(2);
+                }
             }
+            else
+            {
+                InventoryManager.instance.canTurnLightsOn = false;
+                foreach (Light l in acutalLights)
+                {
+                    l.GetComponent<LightBulb>().SwitchLightOff();
+                }
+                this.gameObject.SetActive(false);
+                otherTrigger.SetActive(false);
+            }
+            
         }
     }
+}
+
+public enum LightTriggerType
+{
+    switchOff,
+    flicker
 }

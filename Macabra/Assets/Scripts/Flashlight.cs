@@ -15,6 +15,10 @@ public class Flashlight : MonoBehaviour
     public AudioClip flashof;
     public Light actualLight;
     bool isOn = false;
+    public bool canTurnOn = true;
+    public bool lightOftriggerIsActive = false;
+    public GameObject LightOffTrigger;
+    public GameObject lightoffTrigger2;
     private void Update()
     {
         if (!isFlashHeld)
@@ -37,7 +41,13 @@ public class Flashlight : MonoBehaviour
 
         if(isFlashHeld)
         {
-            if(Input.GetKeyDown(KeyCode.F) )
+            if(!lightOftriggerIsActive)
+            {
+                LightOffTrigger.SetActive(true);
+                lightoffTrigger2.SetActive(true);
+                lightOftriggerIsActive = true;
+            }
+            if(Input.GetKeyDown(KeyCode.F) && canTurnOn)
             {
                 if(isOn)
                 {
@@ -87,6 +97,16 @@ public class Flashlight : MonoBehaviour
         {
             moved.transform.rotation = Quaternion.Slerp(moved.transform.rotation, rot, 10f * Time.deltaTime);
             yield return null;
+        }
+    }
+
+    public void turnFlashOff()
+    {
+        if(flashLight!=null)
+        {
+            actualLight.enabled = false;
+            flashSource.PlayOneShot(flashof);
+            isOn = !isOn;
         }
     }
 }

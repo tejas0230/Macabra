@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 
 public class ObjectiveTrigger : MonoBehaviour
 {
+   
     public TriggerType triggerType;
     public InteractionType interactionType;
     public Objective newObjective;

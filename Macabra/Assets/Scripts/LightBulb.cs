@@ -29,7 +29,7 @@ public class LightBulb: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isOn)
+        if(isOn )
         {
             if(swithcOff!=null && swithcOn!=null)
             {
@@ -41,7 +41,7 @@ public class LightBulb: MonoBehaviour
         }
         else
         {
-            if (swithcOff != null && swithcOn != null)
+            if (swithcOff != null && swithcOn != null && InventoryManager.instance.canTurnLightsOn)
             {
                 swithcOff.SetActive(true);
                 swithcOn.SetActive(false);
@@ -51,48 +51,73 @@ public class LightBulb: MonoBehaviour
 
     public void SwitchLight()
     {
-        if (isOn)
+        if (InventoryManager.instance.canTurnLightsOn)
         {
-            actualLight.enabled = false;
-            isOn = !isOn;
-            if(glass!=null)
-                glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
-            lightSource.PlayOneShot(lightOff);
+
+
+            if (isOn)
+            {
+                actualLight.enabled = false;
+                isOn = !isOn;
+                if (glass != null)
+                    glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+                lightSource.PlayOneShot(lightOff);
+            }
+            else
+            {
+                actualLight.enabled = true;
+                isOn = !isOn;
+                if (glass != null)
+                    glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
+                lightSource.PlayOneShot(lightOn);
+            }
         }
-        else
-        {
-            actualLight.enabled = true;
-            isOn = !isOn;
-            if (glass != null)
-                glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
-            lightSource.PlayOneShot(lightOn);
-        } 
     }
 
     public void SwitchLightOff()
     {
         actualLight.enabled = false;
         isOn = false;
-        glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
+        if(glass!=null)
+            glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.black);
         lightSource.PlayOneShot(lightOff);
     }
     public void SwitchLightOn()
     {
         actualLight.enabled = true;
         isOn = true;
-        glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
+        if (glass != null)
+            glass.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
         lightSource.PlayOneShot(lightOn);
     }
 
-    IEnumerator Flicker()
+    IEnumerator Flicker(float flickerTime)
     {
-        while(isOn!=false)
+        float currentTime = 0;
+        while(currentTime<=flickerTime)
         {
             gameObject.GetComponent<Light>().intensity = (float)Random.Range(0, 60);
             yield return new WaitForSecondsRealtime((float)Random.Range(0.01f,0.1f));
+            currentTime += Time.deltaTime;
         }
+        actualLight.enabled = true;
     }
-    public void FlickerLights()
+    IEnumerator Flicker()
+    {
+        
+        while (isOn!=false)
+        {
+            gameObject.GetComponent<Light>().intensity = (float)Random.Range(0, 60);
+            yield return new WaitForSecondsRealtime((float)Random.Range(0.01f, 0.1f));
+            
+        }
+        actualLight.enabled = true;
+    }
+    public void FlickerLights(float flickerTime)
+    {
+        StartCoroutine(Flicker(flickerTime));
+    }
+    public void FlickerLight()
     {
         StartCoroutine(Flicker());
     }
