@@ -8,6 +8,8 @@ public class UiHandler : MonoBehaviour
 {
     public static UiHandler instance;
     public GameObject MainMenu;
+    public bool instructions;
+    private Transform a;
 
     public TMP_Text ObjectiveAccquiredText;
     public Animator ObjectiveTextAnimator;
@@ -21,6 +23,7 @@ public class UiHandler : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+        a=gameObject.transform.GetChild(1);
     }
 
     void Start()
@@ -43,11 +46,27 @@ public class UiHandler : MonoBehaviour
         //MainMenu.SetActive(false);
     }
 
+    public void showinstructions()
+    {
+        MainMenu.SetActive(false);
+        instructions=true;
+        a.gameObject.SetActive(true);
+    }
+
+    public void backtomainmenu()
+    {
+      MainMenu.SetActive(true);
+      instructions=false;
+      a.gameObject.SetActive(false);
+    }
+
     public void endscreen()
     {
         //SceneController.instance.FadeToLevel(3);// this is for fading to the credits scene
         Application.Quit();
+
     }
+
 
     public void StartObjectiveAnim(string text, float timeToWait)
     {
