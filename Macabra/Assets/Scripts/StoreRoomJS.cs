@@ -91,6 +91,7 @@ public class StoreRoomJS : MonoBehaviour
             child.transform.Translate(new Vector3(child.transform.position.x, child.transform.position.y, child.transform.position.z+12));
             AudioManager.instance.Play("storeRoomStinger");
             other.gameObject.GetComponentInChildren<Flashlight>().canTurnOn = true;
+            this.gameObject.SetActive(false);
         }
     }
 }
