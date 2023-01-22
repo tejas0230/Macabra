@@ -50,6 +50,10 @@ public class CutSceneController : MonoBehaviour
         Cam3.gameObject.SetActive(false);
     }
 
+    public void playPart1()
+    {
+        voiceLineManager.instance.playPart1(voiceLineManager.instance.part1);
+    }
     public void skipCutscene()
     {
         print("SkipCalled");

@@ -19,9 +19,10 @@ public class PhoneScript : MonoBehaviour,IInteractable
 
     public void OnInteract()
     {
+        Debug.Log("phone playing");
         phoneSource.loop = false;
         phoneSource.Stop();
-        phoneSource.PlayOneShot(iCanSeeYou);
+        voiceLineManager.instance.playPart1(voiceLineManager.instance.part3);
     }
 
     public void OnStartHover()

@@ -23,7 +23,7 @@ public class UiHandler : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        a=gameObject.transform.GetChild(1);
+        a=gameObject.transform.GetChild(2);
     }
 
     void Start()
@@ -34,7 +34,7 @@ public class UiHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(SceneManager.GetActiveScene().buildIndex==1)
+      if(SceneManager.GetActiveScene().buildIndex!=0)
         {
             MainMenu.SetActive(false);
         }

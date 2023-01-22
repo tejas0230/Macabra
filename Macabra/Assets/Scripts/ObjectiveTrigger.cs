@@ -6,7 +6,7 @@ using UnityEngine.Playables;
 
 public class ObjectiveTrigger : MonoBehaviour
 {
-   
+    public int voiceLineToPlay;
     public TriggerType triggerType;
     public InteractionType interactionType;
     public Objective newObjective;
@@ -41,6 +41,11 @@ public class ObjectiveTrigger : MonoBehaviour
                         SetNewObjective();
                         playCutscene();
                         isObjGiven = true;
+                        if(voiceLineToPlay!=-1)
+                        {
+                            voiceLineManager.instance.playPart1(voiceLineManager.instance.part2);
+
+                        }                           
                     }
 
                 }
@@ -53,6 +58,11 @@ public class ObjectiveTrigger : MonoBehaviour
                         CompleteObjective(completeId);
                         playCutscene();
                         isObjComplete = true;
+                        if (voiceLineToPlay != -1)
+                        {
+                            voiceLineManager.instance.playPart1(voiceLineManager.instance.part2);
+
+                        }
                     }
 
                 }
@@ -96,6 +106,11 @@ public class ObjectiveTrigger : MonoBehaviour
                             playCutscene();
                             isObjGiven = true;
                             this.gameObject.SetActive(false);
+                            if (voiceLineToPlay != -1)
+                            {
+                                voiceLineManager.instance.playPart1(voiceLineManager.instance.part2);
+
+                            }
                         }
 
                     }
@@ -109,6 +124,11 @@ public class ObjectiveTrigger : MonoBehaviour
                             playCutscene();
                             isObjComplete = true;
                             this.gameObject.SetActive(false);
+                            if (voiceLineToPlay != -1)
+                            {
+                                voiceLineManager.instance.playPart1(voiceLineManager.instance.part2);
+
+                            }
                         }
                         
                         

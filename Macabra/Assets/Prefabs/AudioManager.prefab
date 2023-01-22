@@ -47,13 +47,13 @@ MonoBehaviour:
   sounds:
   - name: Ambience
     clip: {fileID: 8300000, guid: 6a0e9ad1bd67a0f46a643540733ba0d2, type: 3}
-    volume: 0.09
+    volume: 0.258
     pitch: 1.03
     loop: 1
     source: {fileID: 0}
   - name: Music
     clip: {fileID: 8300000, guid: 2ee6fef03a37a254c8dd453427081cac, type: 3}
-    volume: 0.026
+    volume: 0.189
     pitch: 1.18
     loop: 1
     source: {fileID: 0}

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Rendering;
+using UnityEngine.Experimental.Rendering.Universal;
 public class Interior2Timeline : MonoBehaviour
 {
     public static Interior2Timeline instance;
@@ -13,6 +15,12 @@ public class Interior2Timeline : MonoBehaviour
     public Collider phoneCollider;
 
     public GameObject globalVolume;
+    //public VolumeProfile eveningProfile;
+    public VolumeProfile nightProfile;
+    public Material skybox;
+    
+    public Light dirLight;
+    
     private void Awake()
     {
         if (instance == null)
@@ -28,7 +36,7 @@ public class Interior2Timeline : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -55,6 +63,9 @@ public class Interior2Timeline : MonoBehaviour
 
     public void changePost()
     {
-        globalVolume.SetActive(true);
+        globalVolume.GetComponent<Volume>().profile = nightProfile;
+       
+        dirLight.gameObject.SetActive(false);
+        RenderSettings.skybox = skybox; 
     }
 }
