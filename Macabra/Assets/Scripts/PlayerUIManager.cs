@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 public class PlayerUIManager : MonoBehaviour
 {
+    public FPSController controller;
     public GameObject InventoryPanel;
     public GameObject objectiveText;
     public GameObject parent;
@@ -23,12 +24,15 @@ public class PlayerUIManager : MonoBehaviour
     {
         onGoingsize = ObjectiveManager.instance.OnGoingObjective.Count;
         completedSize = ObjectiveManager.instance.CompletedObjectives.Count;
+
     }
     private void Update()
     {
         
         if (Input.GetKey(KeyCode.Tab))
         {
+            Debug.Log("onGoing "+onGoingsize);
+            Debug.Log("Coompleted "+completedSize);
             InventoryPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -42,13 +46,18 @@ public class PlayerUIManager : MonoBehaviour
             }
             if (ObjectiveManager.instance.OnGoingObjective.Count > onGoingsize && !isUIUpdated)
             {
+                
                 isUIUpdated = true;
                 onGoingsize++;
+                
                 GameObject ui = Instantiate(objectiveText);
                 uiList.Add(ui);
                 ui.transform.SetParent(parent.transform);
-                ui.GetComponent<TMP_Text>().text = ObjectiveManager.instance.OnGoingObjective[onGoingsize - 1].title;
-                ui.GetComponent<TMP_Text>().text.TrimStart();
+                if(onGoingsize-1>=0)
+                {
+                    ui.GetComponent<TMP_Text>().text = ObjectiveManager.instance.OnGoingObjective[onGoingsize - 1].title;
+                    ui.GetComponent<TMP_Text>().text.TrimStart();
+                }
                 StartCoroutine(resetUIBool());
             }
 
@@ -74,6 +83,7 @@ public class PlayerUIManager : MonoBehaviour
         }
         else
         {
+            
             InventoryPanel.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

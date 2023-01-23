@@ -61,6 +61,7 @@ public class Puzzle_behavior : MonoBehaviour
           deselect();
         }
       }
+
     }
 
     private void selected()

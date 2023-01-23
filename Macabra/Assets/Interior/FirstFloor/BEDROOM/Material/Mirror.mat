@@ -166,7 +166,7 @@ Material:
     - _RenderQueueType: 4
     - _RequireSplitLighting: 0
     - _SPECULAR_IOR: 1.24
-    - _SPECULAR_ROUGHNESS: 0.02
+    - _SPECULAR_ROUGHNESS: 0.08
     - _Smoothness: 0.711
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
