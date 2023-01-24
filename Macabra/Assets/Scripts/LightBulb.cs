@@ -113,6 +113,22 @@ public class LightBulb: MonoBehaviour
         }
         actualLight.enabled = true;
     }
+
+    IEnumerator FlickerAndTurnOff()
+    {
+        while (isOn != false)
+        {
+            gameObject.GetComponent<Light>().intensity = (float)Random.Range(0, 60);
+            yield return new WaitForSecondsRealtime((float)Random.Range(0.01f, 0.1f));
+
+        }
+        actualLight.enabled = false;
+    }
+
+    public void FlickerLightsAndTurnOff()
+    {
+        StartCoroutine(FlickerAndTurnOff());
+    }
     public void FlickerLights(float flickerTime)
     {
         StartCoroutine(Flicker(flickerTime));

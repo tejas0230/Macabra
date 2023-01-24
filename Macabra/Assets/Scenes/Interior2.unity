@@ -4817,10 +4817,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1262671416, guid: 82c67869ffec2e24b8e482fd481ab4b8, type: 3}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 717206072}
     - target: {fileID: 2136137841, guid: 82c67869ffec2e24b8e482fd481ab4b8, type: 3}
       propertyPath: LightOffTrigger
       value: 
@@ -4829,6 +4825,11 @@ PrefabInstance:
       propertyPath: lightoffTrigger2
       value: 
       objectReference: {fileID: 2018682240}
+    - target: {fileID: 2944475781658448437, guid: 82c67869ffec2e24b8e482fd481ab4b8,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2944475781658448438, guid: 82c67869ffec2e24b8e482fd481ab4b8,
         type: 3}
       propertyPath: m_Name
@@ -30130,11 +30131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 3284539339698285244, guid: 153de6ce224575047b9336e746ae6f04,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153de6ce224575047b9336e746ae6f04, type: 3}
 --- !u!1001 &1050293015
@@ -36976,6 +36972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenDoot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3053185822388155591, guid: b09aff9345beb45429310137ea323b12,
+        type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3302723100027117352, guid: b09aff9345beb45429310137ea323b12,
         type: 3}
       propertyPath: m_RootOrder
@@ -42419,6 +42420,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lamp_9 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5464945266410110878, guid: e1546d4044d9b494f800b9847d7c5689,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6851742684186842327, guid: e1546d4044d9b494f800b9847d7c5689,
         type: 3}
       propertyPath: m_Range
@@ -47064,116 +47070,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ee7d90268da069c45bb3a8db4da6bfed, type: 3}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[3].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[3].name
-      value: Hum
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: cac7fb4253c2dce49a0945c16f8c8524, type: 3}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: storeRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 47fd04ededa567e4f9fae2517dd20777, type: 3}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[5].name
-      value: storeRoomStinger
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9e1e9348241a2b743bb2c1d793ca3578, type: 3}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[6].name
-      value: takeKey
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e80ec9a2c29da884b8b9a7f35db11448, type: 3}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[7].name
-      value: finalClimax
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[3].pitch
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[5].pitch
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[6].pitch
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[7].pitch
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 0.017
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.241
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[5].volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 0.695
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045396859965558556, guid: 32d33428123740e4ab96508ac0fa591b,
-        type: 3}
-      propertyPath: sounds.Array.data[7].volume
-      value: 0.229
-      objectReference: {fileID: 0}
     - target: {fileID: 2045396859965558557, guid: 32d33428123740e4ab96508ac0fa591b,
         type: 3}
       propertyPath: m_RootOrder

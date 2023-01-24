@@ -30,7 +30,7 @@ public class JStrigger1 : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             AudioManager.instance.Play("Stinger1");
-            BasementLight.GetComponent<LightBulb>().FlickerLight();            
+            BasementLight.GetComponent<LightBulb>().FlickerLightsAndTurnOff();            
             //other.gameObject.GetComponent<FPSController>().CanMove = false;
             StartCoroutine(jumpScare1(other));
             //other.gameObject.GetComponent<FPSController>().CanMove = true;
@@ -53,8 +53,10 @@ public class JStrigger1 : MonoBehaviour
             currentime += Time.deltaTime;
 
         }
-        BasementLight.GetComponent<LightBulb>().SwitchLightOff();
+        
         BasementLight.intensity = intensity;
+        BasementLight.GetComponent<LightBulb>().SwitchLightOff();
+        
         
         doorToShut.CloseDoorSlam();
         babyModel.SetActive(false);

@@ -63,3 +63,33 @@ MonoBehaviour:
     pitch: 1.26
     loop: 0
     source: {fileID: 0}
+  - name: Hum
+    clip: {fileID: 8300000, guid: ee7d90268da069c45bb3a8db4da6bfed, type: 3}
+    volume: 0.017
+    pitch: 1.26
+    loop: 1
+    source: {fileID: 0}
+  - name: storeRoom
+    clip: {fileID: 8300000, guid: cac7fb4253c2dce49a0945c16f8c8524, type: 3}
+    volume: 0.241
+    pitch: 1.26
+    loop: 0
+    source: {fileID: 0}
+  - name: storeRoomStinger
+    clip: {fileID: 8300000, guid: 47fd04ededa567e4f9fae2517dd20777, type: 3}
+    volume: 0.5
+    pitch: 1.26
+    loop: 0
+    source: {fileID: 0}
+  - name: takeKey
+    clip: {fileID: 8300000, guid: 9e1e9348241a2b743bb2c1d793ca3578, type: 3}
+    volume: 0.695
+    pitch: 1.26
+    loop: 0
+    source: {fileID: 0}
+  - name: finalClimax
+    clip: {fileID: 8300000, guid: e80ec9a2c29da884b8b9a7f35db11448, type: 3}
+    volume: 0.229
+    pitch: 1.26
+    loop: 0
+    source: {fileID: 0}

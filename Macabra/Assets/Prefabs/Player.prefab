@@ -2418,6 +2418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a034858f270e454458f97d5c7de1f8f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 2944475781658448437}
   InventoryPanel: {fileID: 2037533996}
   objectiveText: {fileID: 651017703842897923, guid: 74b6aa779fcf2f24ab4280069f5d39f6,
     type: 3}
