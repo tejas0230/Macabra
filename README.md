@@ -17,9 +17,13 @@ Programing Concepts:
 5. Audio Systems
 
 Contributors:
+
 Programmer:
+
 Tejas Bendkule
+
 Malhar Choure
 
 Designer:
+
 Chinmay Surve
